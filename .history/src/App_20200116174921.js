@@ -12,14 +12,6 @@ class App extends Component {
   //Cuando carga el componente
   componentDidMount(){
 
-    const citasLS = localStorage.getItem('citas');
-
-    if(citasLS){
-      this.setState({
-        citas: JSON.parse(citasLS)
-      })
-    }
-
 
 
   }

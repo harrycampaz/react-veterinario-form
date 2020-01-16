@@ -9,25 +9,6 @@ class App extends Component {
     citas: []
   };
 
-  //Cuando carga el componente
-  componentDidMount(){
-
-    const citasLS = localStorage.getItem('citas');
-
-    if(citasLS){
-      this.setState({
-        citas: JSON.parse(citasLS)
-      })
-    }
-
-
-
-  }
-
-  componentDidUpdate(){
-    localStorage.setItem('citas', JSON.stringify(this.state.citas));
-  }
-
   createNewCita = data => {
     const citas = [...this.state.citas, data];
 
@@ -38,18 +19,6 @@ class App extends Component {
 
   deleteCita = id => {
     console.log(id);
-
-    //Copiar el state
-    const citasActuales = [... this.state.citas];
-
-    // Utilizar filter para eliminar id de arreglo
-
-    const citas = citasActuales.filter(cita => cita.id !== id);
-
-    //Actualizar states
-    this.setState({
-      citas
-    })
 
     console.log('Diste cliecn');
     
